@@ -9,6 +9,8 @@ import reducers from './reducers';
 
 import PostIndex from './components/PostIndex';
 import NewPost from './components/NewPost';
+import ViewPost from './components/ViewPost';
+
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -20,6 +22,7 @@ ReactDOM.render(
           <div>
             <Switch>
                <Route path="/posts/new" component={NewPost} />
+               <Route path="/posts/:id" component={ViewPost} />
                <Route path="/" component={PostIndex} />
             </Switch>
           </div>
