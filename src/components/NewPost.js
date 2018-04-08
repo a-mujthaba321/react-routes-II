@@ -9,6 +9,23 @@ import { Link } from 'react-router-dom';
 
 import _ from 'lodash';
 
+const FIELDS = {
+
+  title: {
+    type: 'input',
+    label: 'Title'
+  },
+  categories: {
+    type: 'input',
+    label: 'Categories'
+  },
+  content: {
+    type: 'textarea',
+    label: 'Content'
+  }
+
+};
+
 
 class NewPost extends Component {
 
@@ -65,18 +82,19 @@ class NewPost extends Component {
 function validate(values) {
   const errors = {};
 
-  if (!values.title) {
-    errors.title = 'Enter a title';
-  }
+  _.each(FIELDS, (type, field) => {
+    if (!values[field]) {
+      errors[field] = `Enter a ${field}`;
+    }
 
-  if (!values.content) {
-    errors.content = 'Enter some content';
-  }
+  });
+
 
   return errors;
 }
 
 export default reduxForm({
   validate,
-  form: 'PostNewForm'
+  form: 'PostNewForm',
+  fields: _.keys(FIELDS),
 })(connect(null, { createPost })(NewPost));
