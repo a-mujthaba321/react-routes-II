@@ -7,6 +7,8 @@ import { fetchPosts } from '../actions';
 
 import _ from 'lodash';
 
+import withBorder from './hoc/hoc';
+
 
 class PostIndex extends Component {
 
@@ -43,4 +45,6 @@ function mapStateToProps(state) {
   return { posts: state.posts };
 }
 
-export default connect(mapStateToProps, { fetchPosts })(PostIndex);
+const hoc = withBorder(PostIndex);
+
+export default connect(mapStateToProps, { fetchPosts })(hoc);
