@@ -5,6 +5,7 @@ import { fetchSinglePost, deletePost } from '../actions';
 
 import { Link } from 'react-router-dom';
 
+
 class ViewPost extends Component {
 
   constructor() {
@@ -33,7 +34,7 @@ class ViewPost extends Component {
     const { post } = this.props;
 
     if (!post) {
-      return <div>Loading...</div>;
+      return <div>''</div>;
     }
 
     return (
