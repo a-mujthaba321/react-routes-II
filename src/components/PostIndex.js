@@ -11,6 +11,8 @@ import withBorder from './hoc/hoc';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import FormikForm from './FormikForm';
+
 class PostIndex extends Component {
 
   componentDidMount() {
@@ -40,15 +42,7 @@ class PostIndex extends Component {
           {this.renderPosts()}
         </ul>
 
-        <div className="row">
-            <div className="col-sm-3 media my-div text-center">
-                <p><FontAwesomeIcon icon={['fab', 'apple']} size="10x"/></p>
-                
-                <div className="media_body">
-                    <p>Ali Mujuthaba II</p>
-                </div>
-            </div>
-        </div>
+        <div><FormikForm /></div>
 
       </div>
     );

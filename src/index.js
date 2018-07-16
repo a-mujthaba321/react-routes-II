@@ -12,6 +12,7 @@ import PostIndex from './components/PostIndex';
 import NewPost from './components/NewPost';
 import ViewPost from './components/ViewPost';
 import AsyncCreate from './components/atoms/AsyncCreate';
+import FormikForm from './components/FormikForm';
 
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -32,10 +33,11 @@ ReactDOM.render(
       <BrowserRouter>
           <div>
             <Switch>
+                <Route path="/formik" component={FormikForm} />
                 <Route path="/select" component={AsyncCreate} />
-               <Route path="/posts/new" component={NewPost} />
-               <Route path="/posts/:id" component={ViewPost} />
-               <Route path="/" component={PostIndex} />
+                <Route path="/posts/new" component={NewPost} />
+                <Route path="/posts/:id" component={ViewPost} />
+                <Route path="/" component={PostIndex} />
             </Switch>
           </div>
       </BrowserRouter>
